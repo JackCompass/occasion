@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'style.css'%}">
+	<link rel="stylesheet" href="{% static 'form.css' %}">
+	<title>Document</title>
+</head>
+
+<body>
+	<header class="header-container">
+		<div class="drawer-line"></div>
+		<div class="image-icon">
+			<img src="https://source.unsplash.com/random" alt="random image-icon">
+			<h3 class="app_name">Occasion</h3>
+		</div>
+	</header>
+	<section>
+		<div class="login-container">
+			<div class="lottie-animation">
+				<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_jcikwtux.json"
+					background="transparent" speed="1" style="width: 300px; height: 500px;" loop autoplay>
+				</lottie-player>
+
+			</div>
+			<form action="{% url 'login' %}" method="POST">
+				{% csrf_token %}
+				{{form.as_p}}
+				<input type="submit" value="login">
+			</form>
+		</div>
+	</section>
+	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</body>
+
+</html>
