@@ -10,7 +10,6 @@ body {
 	flex-wrap: wrap;
 	background-image: linear-gradient(180deg, #FCFCFC, #F9F9F9);
 	border-radius: 50px;
-	/* box-shadow: 4px 3px 6px -1px #a7a7a7; */
 }
 
 .login-container form {
