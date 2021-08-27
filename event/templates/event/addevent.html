@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'event.css' %}">
 {% endblock css %}
@@ -15,12 +16,18 @@
 			<a href="{% url 'logout' %}">Log out</a>
 		</div>
 	</div>
+	
+	
+	<div class="form-section">
+		<form action="" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ form|crispy }}
+			<input type="submit" value="Add Event" class="btn btn-primary">
+		</form>
+	</div>
+	
 
-	<form action="" method="POST" enctype="multipart/form-data">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Add Event">
-	</form>
+	
 {% endblock body %}
 
 {% block scripting %}

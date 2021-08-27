@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,11 +28,14 @@
 				</lottie-player>
 
 			</div>
-			<form action="{% url 'login' %}" method="POST">
-				{% csrf_token %}
-				{{form.as_p}}
-				<input type="submit" value="login">
-			</form>
+			<div class="form-section">
+				<form action="{% url 'login' %}" method="POST">
+					{% csrf_token %}
+					{{form|crispy}}
+					<input class="btn btn-primary" type="submit" value="login">
+				</form>
+			</div>
+			
 		</div>
 	</section>
 	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>

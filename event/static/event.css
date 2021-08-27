@@ -13,11 +13,31 @@
 .navigation-link a {
 	text-decoration: none;
 	margin: 0 15px;
-	font-size: 25px;
+	font-size: 15px;
 }
 
 .logout-link a {
 	text-decoration: none;
 	margin: 0 15px;
-	font-size: 25px;
+	font-size: 15px;
+}
+
+/* Handling form section CSS */
+
+.form-section {
+	margin-top: 130px;
+	display: flex;
+	justify-content: center;
+	
+}
+
+.form-section form {
+	padding: 50px;
+	background-image: linear-gradient(to bottom right, #FCFCFC,#F0F0F0);
+	border-radius: 5px;
+}
+
+.btn-primary {
+	margin: 5px auto;
+	display: block;
 }

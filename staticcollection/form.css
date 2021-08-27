@@ -16,3 +16,19 @@ body {
 	padding: 150px 25px;
 }
 
+.btn-primary {
+	margin: 5px auto;
+	display: block;
+}
+
+.form-section form {
+	padding: 50px;
+	border-radius: 5px;
+}
+
+.form-section {
+	margin-top: 130px;
+	display: flex;
+	justify-content: center;
+	
+}
