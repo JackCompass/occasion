@@ -6,7 +6,7 @@ class Events(models.Model):
 	'''
 	Model is used to store the events.
 	'''
-	event_name = models.CharField(max_length=100, unique=True)
+	event_name = models.CharField(max_length=100)
 	description = models.TextField()
 	image = models.ImageField(upload_to = 'images/', blank = True, null = True, default = 'images/defaultEvent.png')
 	location = models.CharField(max_length=50)

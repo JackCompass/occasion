@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, reverse
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 from event.forms import EventForm
 from event.models import Events, Like
+import json
 
 @login_required()
 def index(request):
@@ -38,3 +39,27 @@ def addEvent(request):
 		})
 
 
+def postdata(request):
+	if request.method != 'GET':
+		post_data = json.loads(request.body.decode("utf-8"))
+		eventid = post_data.get('id')
+		event = Events.objects.get(id = eventid)
+
+		if request.method == 'POST':
+			try :
+				obj = Like.objects.get(event = event)
+			except:
+				obj = Like.objects.create(event = event)
+			obj.user.add(request.user)
+
+		elif request.method == 'DELETE':
+			try : 
+				obj = Like.objects.get(event = event)
+			except :
+				print("No such event exists")
+			else:
+				obj.user.remove(request.user)
+		return JsonResponse('', safe=False)
+
+	else:
+		return JsonResponse('Endpoint to test GET request', safe=False)
