@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+	<form action="" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Add Event">
+	</form>
+{% endblock body %}
+
+{% block scripting %}
+{% endblock scripting %}

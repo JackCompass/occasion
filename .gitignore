@@ -1,4 +1,6 @@
-db.sqlite3
-__pycache__/
-*.env
 *.log
+*.pot
+*.pyc
+__pycache__
+db.sqlite3
+media

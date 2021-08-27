@@ -1,8 +1,8 @@
 function togglePreference (x) {
-	if (x.style.color == 'white') {
-		x.style.color = 'red';
+	if (x.style.color == 'red') {
+		x.style.color = 'white';
 	}
 	else {
-		x.style.color = 'white';
+		x.style.color = 'red';
 	}
   }
