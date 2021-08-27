@@ -2,11 +2,18 @@ from django.shortcuts import render, redirect, reverse
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from event.forms import EventForm
-# Create your views here.
+from event.models import Events, Like
 
 @login_required()
 def index(request):
-	return render(request, 'event/home.html')
+	# Fetching all the events from the database
+	events = Events.objects.all()
+	liked = Like.objects.filter(user = request.user).values_list('event', flat=True)
+
+	return render(request, 'event/home.html', {
+		'events' : events,
+		'liked' : liked,
+	})
 
 
 @login_required()
@@ -29,3 +36,5 @@ def addEvent(request):
 			return render(request, 'event/addevent.html', {
 			'form' : form
 		})
+
+

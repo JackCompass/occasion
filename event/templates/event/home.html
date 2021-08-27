@@ -16,62 +16,43 @@
 				5) image
 				6) is liked
 			-->
-	<div class="event" id="">
-		<h3>Event Name</h3>
-		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, dignissimos.</p>
-		<div class="event-image">
-			<img src="https://source.unsplash.com/random/" alt="event-image">
-		</div>
-		<div class="event-specific-details">
-			<h3>kanpur1</h3>
-			<h3>time of event</h3>
-		</div>
-		<div class="event-like">
-			<i onclick="togglePreference(this)" class="fa fa-heart"></i>
-		</div>
-	</div>
-	<div class="event" id="">
-		<h3>Event Name</h3>
-		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, dignissimos.</p>
-		<div class="event-image">
-			<img src="https://source.unsplash.com/random/" alt="event-image">
-		</div>
-		<div class="event-specific-details">
-			<h3>kanpur1</h3>
-			<h3>time of event</h3>
-		</div>
-		<div class="event-like">
-			<i onclick="togglePreference(this)" class="fa fa-heart"></i>
-		</div>
-	</div>
-	<div class="event" id="">
-		<h3>Event Name</h3>
-		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, dignissimos.</p>
-		<div class="event-image">
-			<img src="https://source.unsplash.com/random/" alt="event-image">
-		</div>
-		<div class="event-specific-details">
-			<h3>kanpur1</h3>
-			<h3>time of event</h3>
-		</div>
-		<div class="event-like">
-			<i onclick="togglePreference(this)" class="fa fa-heart"></i>
-		</div>
-	</div>
-	<div class="event" id="">
-		<h3>Event Name</h3>
-		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, dignissimos.</p>
-		<div class="event-image">
-			<img src="https://source.unsplash.com/random/" alt="event-image">
-		</div>
-		<div class="event-specific-details">
-			<h3>kanpur1</h3>
-			<h3>time of event</h3>
-		</div>
-		<div class="event-like">
-			<i onclick="togglePreference(this)" class="fa fa-heart"></i>
-		</div>
-	</div>
+	<!-- Using DTL for loop to show all the events -->
+	{% for event in events %}
+		{% if event.pk in liked %}
+			<div class="event" id="{{ event.pk }}">
+				<h3>{{event.event_name}}</h3>
+				<p>{{event.description}}</p>
+				<div class="event-image">
+					<!-- <img src="https://source.unsplash.com/random/" alt="event-image"> -->
+					<img src="{{ event.image.url }}" alt="event-image">
+				</div>
+				<div class="event-specific-details">
+					<h3>{{event.location}}</h3>
+					<h3>{{event.event_date}}</h3>
+				</div>
+				<div class="event-like">
+					<i onclick="togglePreference(this)" class="fa fa-heart" style="color: white;"></i>
+				</div>
+			</div>
+		{% else %}
+			<div class="event" id="{{ event.pk }}">
+				<h3>{{event.event_name}}</h3>
+				<p>{{event.description}}</p>
+				<div class="event-image">
+					<!-- <img src="https://source.unsplash.com/random/" alt="event-image"> -->
+					<img src="{{ event.image.url }}" alt="event-image">
+				</div>
+				<div class="event-specific-details">
+					<h3>{{event.location}}</h3>
+					<h3>{{event.event_date}}</h3>
+				</div>
+				<div class="event-like">
+					<i onclick="togglePreference(this)" class="fa fa-heart" style="color: white;"></i>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+
 </section>
 
 {% block scripting %}

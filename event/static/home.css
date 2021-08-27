@@ -10,7 +10,8 @@ body {
 }
 
 .event {
-	width: fit-content;
+	width: 100%;
+	max-width: 500px;
 	margin: 10px auto;
 	padding: 10px;
 	background-image: linear-gradient(to right, #EAEFF2, #DEE2E6);
@@ -42,11 +43,6 @@ body {
 }
 
 /* Here writing custom css for heart like button */
-
-.fa {
-	color: white;
-	font-size: 30px;
-}
 
 .fa-heart:before {
     font-size: 30px;
