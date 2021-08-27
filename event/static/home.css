@@ -1,0 +1,50 @@
+body {
+	background-image: linear-gradient(to right, #F9FCFF, #F8FCFF);
+}
+
+.event-list {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.event {
+	border: 2px solid slateblue;
+	width: fit-content;
+	margin: 10px auto;
+	padding: 10px;
+	background-image: linear-gradient(to right, #EAEFF2, #DEE2E6);
+	border-radius: 5px;
+}
+
+.event-specific-details {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.event-like {
+	background-image:linear-gradient(to right, rgba(255,0,0,0), #F6FBFF) ;
+	text-align: center;
+	border-radius: 20px;
+	height: 35px;
+}
+
+.event-image {
+	width: 100%;
+	background-image: linear-gradient(to right, #F6FBFF, #FBFDFF);
+}
+
+.event img {
+	width: inherit;
+	height: 300px;
+	object-fit: fill;
+	object-position: center;
+}
+
+/* Here writing custom css for heart like button */
+
+.fa:hover {
+  color: darkblue;
+}

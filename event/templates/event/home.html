@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'home.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock css %}
+
+{% block body %}
+
+<section class="event-list">
+	<!-- Event box going to have these fields
+				1) Event name
+				2) data / content
+				3) time 
+				4) location
+				5) image
+				6) is liked
+			-->
+	<div class="event" id="">
+		<h3>Event Name</h3>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, dignissimos.</p>
+		<div class="event-image">
+			<img src="https://source.unsplash.com/random/" alt="event-image">
+		</div>
+		<div class="event-specific-details">
+			<h3>kanpur1</h3>
+			<h3>time of event</h3>
+		</div>
+		<div class="event-like">
+			<i onclick="togglePreference(this)" class="fa fa-thumbs-up" style="font-size: 30px;"></i>
+		</div>
+	</div>
+</section>
+
+{% block scripting %}  
+<script src="{% static 'home.js' %}"></script>
+{% endblock scripting %}
+
+{% endblock body %}
