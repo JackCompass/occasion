@@ -2,6 +2,32 @@ body {
 	background-image: linear-gradient(to right, #F9FCFF, #F8FCFF);
 }
 
+/* navigation bar css */
+
+.navigation-bar {
+	height: 30px;
+	width: inherit;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+
+	background-image: linear-gradient(to bottom right, 
+	#FFFEFC, #FFFCF7);
+	border-radius: 5px;
+}
+
+.navigation-link a {
+	text-decoration: none;
+	margin: 0 15px;
+	font-size: 25px;
+}
+
+.logout-link a {
+	text-decoration: none;
+	margin: 0 15px;
+	font-size: 25px;
+}
+
 .event-list {
 	margin-top: 50px;
 	display: flex;

@@ -1,9 +1,21 @@
 {% extends 'layout.html' %}
-
+{% load static %}
 {% block css %}
+<link rel="stylesheet" href="{% static 'event.css' %}">
 {% endblock css %}
 
 {% block body %}
+	<div class="navigation-bar">
+		<div class="navigation-link">
+			<a href="{% url 'index' %}">Home</a>
+			<a href="{% url 'addevent' %}">Add Event</a>
+			<a href="{% url 'favourite' %}">Favourite</a>
+		</div>
+		<div class="logout-link">
+			<a href="{% url 'logout' %}">Log out</a>
+		</div>
+	</div>
+
 	<form action="" method="POST" enctype="multipart/form-data">
 		{% csrf_token %}
 		{{ form.as_p }}

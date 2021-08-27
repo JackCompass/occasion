@@ -5,7 +5,7 @@ async function togglePreference(x) {
 	var csrftoken = getCookie('csrftoken');
 	if (x.style.color == 'red') {
 		x.style.color = 'white';
-		fetch("/postdata", {
+		fetch("/api", {
 			method: 'DELETE',
 			body: data,
 			headers: { 'Accept': 'application/json, text/plain, */*',
@@ -15,7 +15,7 @@ async function togglePreference(x) {
 	}
 	else {
 		x.style.color = 'red';
-		fetch("/postdata", {
+		fetch("/api", {
 			method: 'POST',
 			body: data,
 			headers: { 'Accept': 'application/json, text/plain, */*',

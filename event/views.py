@@ -9,6 +9,8 @@ import json
 def index(request):
 	# Fetching all the events from the database
 	events = Events.objects.all()
+
+	# Fetching the spcific post Which user has liked.
 	liked = Like.objects.filter(user = request.user).values_list('event', flat=True)
 
 	return render(request, 'event/home.html', {
@@ -38,13 +40,27 @@ def addEvent(request):
 			'form' : form
 		})
 
+@login_required()
+def display(request):
+	if request.method == 'POST':
+		# Here again we will handle the queries
+		pass
+	else:
+		events = Events.objects.all()
+		liked = Like.objects.filter(user = request.user).values_list('event', flat=True)
+		return render(request, 'event/favourite.html', {
+			'events' : events,
+			'liked' : liked,
+		})
 
-def postdata(request):
+@login_required()
+def api(request):
 	if request.method != 'GET':
 		post_data = json.loads(request.body.decode("utf-8"))
 		eventid = post_data.get('id')
 		event = Events.objects.get(id = eventid)
 
+		# Handling the POST request 
 		if request.method == 'POST':
 			try :
 				obj = Like.objects.get(event = event)
@@ -52,6 +68,7 @@ def postdata(request):
 				obj = Like.objects.create(event = event)
 			obj.user.add(request.user)
 
+		# Handling the DELETE request
 		elif request.method == 'DELETE':
 			try : 
 				obj = Like.objects.get(event = event)
@@ -59,7 +76,10 @@ def postdata(request):
 				print("No such event exists")
 			else:
 				obj.user.remove(request.user)
+		# Sending an empty string as a JSON response 
+		# Could be used to send SUCCESS message
 		return JsonResponse('', safe=False)
 
 	else:
+		# Using to test GET request API
 		return JsonResponse('Endpoint to test GET request', safe=False)
