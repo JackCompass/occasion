@@ -10,7 +10,6 @@ body {
 }
 
 .event {
-	border: 2px solid slateblue;
 	width: fit-content;
 	margin: 10px auto;
 	padding: 10px;
@@ -30,7 +29,6 @@ body {
 	border-radius: 20px;
 	height: 35px;
 }
-
 .event-image {
 	width: 100%;
 	background-image: linear-gradient(to right, #F6FBFF, #FBFDFF);
@@ -45,6 +43,15 @@ body {
 
 /* Here writing custom css for heart like button */
 
-.fa:hover {
-  color: darkblue;
+.fa {
+	color: white;
+	font-size: 30px;
+}
+
+.fa-heart:before {
+    font-size: 30px;
+}
+
+.fa-heart:after {
+    font-size: 30px;
 }
