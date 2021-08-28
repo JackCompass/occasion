@@ -76,10 +76,18 @@ WSGI_APPLICATION = 'occasion.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+	'default' : {
+		'ENGINE' : 'django.db.backends.mysql',
+		'NAME' : 'occasion',
+		'USER' : '', # write your username
+		'PASSWORD' : '', # write your password
+		'HOST' : 'localhost',
+		'PORT' : '3306',
+	}
 }
 
 
