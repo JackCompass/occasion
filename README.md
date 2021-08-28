@@ -4,6 +4,11 @@ A Django-based web app to manage your events. After logging in, a user can:
 - Create Events with title, description, image, location and date
 - Favorite other events and view them on a separate page
 
+Demo: https://youtu.be/WLkipKlNTy0
+
+# Desktop Screen Capture
+https://user-images.githubusercontent.com/22092047/131215588-f3548cc3-b92a-4820-8727-11ac37f3029f.mp4
+
 ## Desktop
 ![Occasion](https://user-images.githubusercontent.com/22092047/131206548-3fcf61cc-6ed0-46de-b273-79b2e09c875b.png)
 
